@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 800px;
+      min-height: 100vh;
+      background: #ffffff;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .resume {
+      width: 100%;
+    }
+
+    /* Header Section */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .name {
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+      margin: 0;
+    }
+
+    .contact-info {
+      text-align: right;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Profile Section */
+    .profile {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* Section Styles */
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #007bff;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .item {
+      margin-bottom: 15px;
+    }
+
+    .item-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    .item-details {
+      font-size: 14px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    .item-description {
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    /* Skills Section */
+    .skills-list, .languages-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .skill-item, .language-item {
+      font-size: 14px;
+      color: #555;
+      background-color: #f8f9fa;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    /* Buttons */
+    .button-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .save-btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .save-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Resume Content -->
+    <div class="resume">
+      <div class="header">
+        <div class="name" contenteditable="true">Your Name</div>
+        <div class="contact-info" contenteditable="true">
+          <div>abc@example.com</div>
+          <div>(212) 123-4567</div>
+          <div>New York, NY</div>
+        </div>
+      </div>
+
+      <!-- Profile -->
+      <div class="profile section" contenteditable="true">
+        Experienced Content Writer highly skilled in researching, writing, and publishing compelling content. Results-driven and adept at driving the production of meaningful and original work for media platforms and clients.
+      </div>
+
+      <!-- Employment History -->
+      <div class="section">
+        <div class="section-title" contenteditable="true">Employment History</div>
+        <div class="item" contenteditable="true">
+          <div class="item-title">Content Writer at Synergis Creative, New York</div>
+          <div class="item-details">February 2021 — Present</div>
+          <div class="item-description">
+            • Communicate with internal and external partners to develop and execute content strategies.<br>
+            • Meet all project requirements and deadlines.<br>
+            • Create well-researched and stimulating content.<br>
+            • Work collaboratively with team members to exceed project goals.
+          </div>
+        </div>
+        <div class="item" contenteditable="true">
+          <div class="item-title">Content Writer at The Swan Group, New York</div>
+          <div class="item-details">July 2018 — February 2021</div>
+          <div class="item-description">
+            • Researched and created interesting content for a variety of social media platforms including Facebook, LinkedIn, and Instagram.<br>
+            • Worked one-on-one with high-value clients to understand their content needs and long-term goals.<br>
+            • Developed content strategies to assure desired outcomes.<br>
+            • Wrote informative, motivational, and creative articles.
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <div class="section-title" contenteditable="true">Education</div>
+        <div class="item" contenteditable="true">
+          <div class="item-title">Bachelor of English, Marist College, Poughkeepsie</div>
+          <div class="item-details">September 2015 — May 2019</div>
+        </div>
+        <div class="item" contenteditable="true">
+          <div class="item-title">High School Diploma, Carmel High School, Carmel</div>
+          <div class="item-details">September 2011 — May 2015</div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="section">
+        <div class="section-title" contenteditable="true">Skills</div>
+        <div class="skills-list" contenteditable="true">
+          <div class="skill-item">Communication Skills</div>
+          <div class="skill-item">Effective Time Management</div>
+          <div class="skill-item">Ability to Work Under Pressure</div>
+          <div class="skill-item">Editing and Proofreading</div>
+          <div class="skill-item">Creative Writing</div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="section">
+        <div class="section-title" contenteditable="true">Languages</div>
+        <div class="languages-list" contenteditable="true">
+          <div class="language-item">Spanish</div>
+          <div class="language-item">English</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-container">
+      <button class="save-btn" onclick="calculateResumeScore()">Calculate Resume Score</button>
+      <button class="save-btn" onclick="saveResumeAsPDF()">Save as PDF</button>
+    </div>
+  </div>
+
+  <script>
+    function calculateResumeScore() {
+      let score = 0;
+
+      const name = document.querySelector('.name').innerText.trim();
+      if (name) score += 20;
+
+      const profile = document.querySelector('.profile').innerText.trim();
+      if (profile) score += 20;
+
+      const jobs = document.querySelectorAll('.item-title');
+      if (jobs.length > 0) score += 30;
+
+      const skills = document.querySelectorAll('.skill-item');
+      if (skills.length >= 3) score += 15;
+
+      const education = document.querySelectorAll('.section:nth-of-type(3) .item-title');
+      if (education.length > 0) score += 15;
+
+      alert(`Resume Score: ${score}/100`);
+    }
+
+    async function saveResumeAsPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      const resume = document.querySelector('.resume');
+      const canvas = await html2canvas(resume);
+      const imgData = canvas.toDataURL('image/png');
+      doc.addImage(imgData, 'PNG', 10, 10, 190, 0);
+      doc.save('resume.pdf');
+    }
+  </script>
+</body>
+</html>

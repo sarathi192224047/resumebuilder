@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <style>
+        /* General Reset */
+        body, h1, p, a, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgb(0, 200, 230);
+            color: #fff;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1; /* Reduced line-height */
+        }
+
+        .logo-text h3, .logo-text h4, .logo-text h6 {
+            margin: 1.5px; /* Removes any extra margins */
+        }
+
+        .logo-text h3 {
+            font-weight: bold;
+            color: black;
+        }
+
+        .logo-text h4 {
+            font-weight: bold;
+            color: black;
+        }
+
+        .logo-text h6 {
+            font-weight: normal;
+            color: black;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            margin-right:20px;
+        }
+
+        .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    height: auto;
+    margin-right: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Target the transform property */
+    display: inline-block; /* Ensure it's not inline */
+}
+
+.nav-links a:hover {
+    transform: scale(1.2); /* Apply the scale transformation here */
+}
+
+
+        /* Main Content */
+        .content {
+            text-align: center;
+            margin-top: 150px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            width:200px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            border: 5px solid rgba(0, 199, 230, 0.423);
+            background-color:  rgb(0, 200, 230);;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: rgba(0, 199, 230, 0.423); 
+        }
+
+        /* Footer Text */
+        .footer-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="rect1.png" alt="MOP Logo" />
+            <div class="logo-text">
+                <h3>MOP</h3>
+                <h4>RESUME BUILDER</h4>
+                <h6>ME ON PAPER</h6>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="landing.php">Home</a>
+            <a href="userprofile.php">My Account</a>
+            <a href="interview_schedule.php">Interview Scheduler</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>Select Template</h1>
+        <p class="subtitle">
+            Unlock your potential with our polished templates, crafted to showcase your expertise and leave a lasting impression
+        </p>
+        <div class="buttons">
+            <a href="recommended.php"><button class="btn">Recommended</button></a>
+            <a href="professional.php"><button class="btn">Professional</button></a>
+            <a href="modern.php"><button class="btn">Modern</button></a>
+        </div>
+        <p class="footer-text">Get the best templates here!!</p>
+    </main>
+</body>
+</html>

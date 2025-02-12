@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuristic Focus src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333333;
+    }
+    .back-btn {
+  position: absolute;
+  left: 20px;
+  top: 23px;
+  padding:10px  15px;
+  font-size: 24px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: lightgrey;
+  color:black;
+}
+    .Title {
+      width: 100%;
+      background-color: rgb(0, 200, 230);
+    }
+
+    .Title h1 {
+      color: black;
+      padding: 30px;
+      margin: 0;
+      text-align: center;
+    }
+    .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto; /* Center the section */
+  gap: 20px;
+  padding: 10px;
+  flex-wrap: wrap;
+  background-color: rgba(0, 199, 230, 0.423);
+  width: fit-content; /* Shrink to fit the content */
+}
+
+    .date {
+  float: right;
+  font-size: 14px;
+  color: #666;
+}
+
+    .resume-container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background-color: #2b2f36;
+      color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .photo {
+      width: 120px;
+      height: 120px;
+      background-color: #2b2f36;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      border: 3px solid #ff6f61;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .photo span{
+      cursor:pointer;
+    }
+
+    .photo input {
+      display: none;
+    }
+
+    .header-info {
+      flex-grow: 1;
+      margin-left: 20px;
+    }
+
+    .header-info h1 {
+      color: #ff6f61;
+      font-size: 32px;
+      margin: 0;
+    }
+
+    .header-info h2 {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    .contact {
+      text-align: right;
+    }
+
+    .contact p {
+      font-size: 14px;
+      margin: 2px 0;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .left-column {
+      width: 35%;
+    }
+
+    .right-column {
+      width: 60%;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    section h3 {
+      color: #ff6f61;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    section p, ul {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .bar {
+      display: block;
+      width: 100%;
+      height: 6px;
+      background-color: #ddd;
+      border-radius: 3px;
+      margin-top: 5px;
+    }
+
+    .fill {
+      display: block;
+      height: 100%;
+      background-color: #ff6f61;
+      border-radius: 3px;
+    }
+
+    .languages ul li, {
+      display: inline-block;
+      background-color: #ff6f61;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    .hobbies ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hobbies li {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #333333;
+}
+
+.hobbies .bar {
+  display: block;
+  width: 100%;
+  height: 6px;
+  background-color: #ddd;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+.hobbies .fill {
+  display: block;
+  height: 100%;
+  background-color: #ff6f61;
+  border-radius: 3px;
+}
+.education-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .education-item {
+      width: 50%;
+      margin-bottom: 10px;
+    }
+    .languages ul{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+    }
+    .languages li{
+      background-color: #ff6f61;
+      padding:8px 20px;
+      width:fit-content;
+      border-radius:20px;
+    }
+    .download-btn {
+      width: 200px;
+      padding: 15px 20px;
+      margin: 10px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .download-btn:hover {
+      background-color: #0056b3;
+    }
+
+select {
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease;
+}
+
+select:focus {
+  border-color: #007bff;
+}
+
+.color-picker {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 50%;
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+  border-radius: 50%;
+}
+
+.color-picker::-webkit-color-swatch {
+  border-radius: 50%;
+}
+
+.color-picker:focus {
+  border-color: #007bff;
+}
+  </style>
+</head>
+<body>
+<div class="Title">
+     <button class="back-btn" onclick="goBack()"> < </button>
+        <h1>CREATE YOUR RESUME</h1>
+      </div>
+      <div class="controls">
+        <select class="font-select" id="fontSelect">
+          <option value="Arial">Arial</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Tahoma">Tahoma</option>
+          <option value="Trebuchet MS">Trebuchet MS</option>
+        </select>
+    
+        <select class="font-size-select" id="fontSizeSelect">
+          <option value="14px">14px</option>
+          <option value="16px">16px</option>
+          <option value="18px">18px</option>
+          <option value="20px">20px</option>
+          <option value="22px">22px</option>
+          <option value="24px">24px</option>
+          <option value="26px">26px</option>
+          <option value="28px">28px</option>
+          <option value="32px">32px</option>
+          <option value="48px">48px</option>
+          <option value="56px">56px</option>
+          <option value="72px">72px</option>
+        </select>
+    
+        <input type="color" class="color-picker" id="colorPicker" value="#000000">
+    
+        <select id="formatSelect">
+          <option value="png">PNG</option>
+          <option value="jpg">JPG</option>
+          <option value="pdf">PDF</option>
+        </select>
+    
+        <button class="download-btn" onclick="downloadResume()">Download Resume</button>
+        <button class="download-btn" onclick="saveResume()">Save Resume</button>
+      </div>
+  <div class="resume-container">
+    <div class="header" contenteditable="true">
+      <div class="photo">
+        <label for="upload-photo">
+          <span id="placeholder-text">Upload</span>
+          <img id="profile-photo" alt="Uploaded Photo">
+        </label>
+        <input id="upload-photo" type="file" accept="image/*" onchange="previewPhoto(event)">
+      </div>
+      <div class="header-info">
+        <h1>NOEL<br> TAYLOR</h1>
+        <h2>GRAPHIC & WEB DESIGNER</h2>
+      </div>
+      <div class="contact">
+        <p><strong>Phone:</strong> +1 708-390-5489</p>
+        <p><strong>Email:</strong> youremail@website.com</p>
+        <p><strong>Website:</strong> www.yourwebsite.com</p>
+        <p><strong>Address:</strong> 789 Prudence Street, Lincoln Park, MI 48458</p>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="left-column" contenteditable="true">
+        <section class="about">
+          <h3>ABOUT ME</h3>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. It has survived not only five centuries, but the leap into electronic typesetting unchanged.</p>
+        </section>
+        <section class="skills">
+          <h3>SKILLS</h3>
+          <ul>
+            <li>Adobe Photoshop <span class="bar"><span class="fill" style="width: 90%;"></span></span></li>
+            <li>Adobe Illustrator <span class="bar"><span class="fill" style="width: 85%;"></span></span></li>
+            <li>Microsoft PowerPoint <span class="bar"><span class="fill" style="width: 80%;"></span></span></li>
+            <li>Microsoft Word <span class="bar"><span class="fill" style="width: 75%;"></span></span></li>
+            <li>HTML5 + CSS3 <span class="bar"><span class="fill" style="width: 95%;"></span></span></li>
+          </ul>
+        </section>
+        <section class="languages">
+          <h3>LANGUAGES</h3>
+          <ul>
+            <li>English</li>
+            <li>Spanish</li>
+            <li>French</li>
+          </ul>
+        </section>
+        <section class="hobbies">
+  <h3>HOBBIES</h3>
+  <ul>
+    <li>
+      Playing Video Games
+      <span class="bar"><span class="fill" style="width: 90%;"></span></span>
+    </li>
+    <li>
+      Book Reading
+      <span class="bar"><span class="fill" style="width: 80%;"></span></span>
+    </li>
+    <li>
+      Traveling
+      <span class="bar"><span class="fill" style="width: 85%;"></span></span>
+    </li>
+  </ul>
+</section>
+      </div>
+      <div class="right-column" contenteditable="true">
+      <section class="education">
+          <h3>EDUCATION</h3>
+          <div class="education-container">
+            <div class="education-item">
+              <p><strong>Stanford University</strong><br>Master Degree Graduate<br>2011 - 2013</p>
+            </div>
+            <div class="education-item">
+              <p><strong>University of Chicago</strong><br>Bachelor Degree Graduate<br>2007 - 2009</p>
+            </div>
+          </div>  
+        <section class="references">
+          <h3>REFERENCES</h3>
+          <p><strong>Darwin B. Magana</strong><br>1964 Harley Brook Lane, Johnstown, PA 15904<br>Phone: +1 970-359-3332<br>Email: www.yourwebsite.com</p>
+          <p><strong>Robert J. Belvin</strong><br>1836 Little Acres Lane, Champaign, IL 61822<br>Phone: +1 970-759-5681<br>Email: www.yourwebsite.com</p>
+        </section>
+        <section class="experience">
+          <h3>JOB EXPERIENCE</h3>
+          <span class="date">June 2018 – May 2022</span>
+          <p><strong>Web Designer</strong><br>Creative Agency / Chicago<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, nisi. At earum culpa dignissimos consectetur</p>
+          <span class="date">June 2018 – May 2022</span>
+          <p><strong>Graphic Designer</strong><br>Creative Mind / NYC<br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum quisquam doloribus veritatis, quia dolorum repellat</p>
+          <span class="date">June 2018 – May 2022</span>
+          <p><strong>Marketing Manager</strong><br>Marketing Agency / Miami<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati corporis reiciendis dignissimos cum quaerat molestiae?</p>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2024/11/19/09/20241119091811-LTYSS5JC.js"></script>
+  <script>
+  // Change font of the entire resume
+fontSelect.addEventListener("change", () => {
+  const font = fontSelect.value;
+  document.querySelector(".resume-container").style.fontFamily = font;
+});
+
+// Apply selected font size to highlighted text
+fontSizeSelect.addEventListener("change", () => {
+  const selectedSize = fontSizeSelect.value;
+  const selection = window.getSelection();
+
+  if (selection.rangeCount === 0) return; // No text selected
+
+  const range = selection.getRangeAt(0);
+  const selectedText = range.toString();
+
+  // Wrap selected text in a span with font size
+  const span = document.createElement("span");
+  span.style.fontSize = selectedSize;
+  span.textContent = selectedText;
+
+  range.deleteContents();
+  range.insertNode(span);
+});
+
+// Apply color to selected text only
+colorPicker.addEventListener("input", () => {
+  const color = colorPicker.value;
+  const selection = window.getSelection();
+
+  if (!selection.rangeCount) return; // No text selected
+
+  const range = selection.getRangeAt(0);
+  const selectedText = range.toString();
+
+  // Wrap selected text in a span with color
+  const span = document.createElement("span");
+  span.style.color = color;
+  span.textContent = selectedText;
+
+  range.deleteContents();
+  range.insertNode(span);
+});
+
+// Download the resume in the selected format
+function downloadResume() {
+  const format = document.getElementById("formatSelect").value;
+  const resume = document.querySelector(".resume-container");
+
+  if (format === "png" || format === "jpg") {
+    // Ensure `html2canvas` works correctly
+    html2canvas(resume, {
+      backgroundColor: null, // Transparent background
+      scale: 2, // Higher resolution
+      scrollX: -window.scrollX, // Handle scrolling
+      scrollY: -window.scrollY,
+      useCORS: true, // Cross-origin support
+    })
+      .then((canvas) => {
+        const link = document.createElement("a");
+        link.download = `resume.${format}`;
+        link.href = canvas.toDataURL(`image/${format}`);
+        link.click();
+      })
+      .catch((error) => console.error("Error generating image:", error));
+  } else if (format === "pdf") {
+    // Ensure `jspdf` works correctly
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF("p", "pt", "a4");
+
+    pdf.html(resume, {
+      x: 10,
+      y: 10,
+      width: 550, // Width of the content in PDF
+      windowWidth: resume.scrollWidth, // Match resume's width
+      callback: function (doc) {
+        doc.save("resume.pdf");
+      },
+    }).catch((error) => console.error("Error generating PDF:", error));
+  }
+}
+const resume = document.querySelector(".resume-container"); // Ensure this exists
+
+function saveResume() {
+  html2canvas(resume, {
+    backgroundColor: null,
+    scale: 2,
+    scrollX: -window.scrollX,
+    scrollY: -window.scrollY,
+    useCORS: true,
+  }).then((canvas) => {
+    const dataURL = canvas.toDataURL("image/jpeg"); // Convert to base64 image data
+    const email = "user@example.com"; // Replace with actual email or input value
+
+    fetch("save_resume.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: email, resume_image: dataURL }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          alert("Resume saved successfully!");
+        } else {
+          alert("Failed to save resume: " + data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("An error occurred while saving the resume.");
+      });
+  });
+}
+function goBack() {
+  window.history.back();
+}
+
+    function previewPhoto(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const photo = document.getElementById('profile-photo');
+        const placeholder = document.getElementById('placeholder-text');
+        photo.src = e.target.result;
+        photo.style.display = 'block';
+        placeholder.style.display = 'none';
+      };
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+</body>
+</html>

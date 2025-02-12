@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Resume</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .resume-container {
+      width: 100%;
+      max-width: 900px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .score-display {
+      text-align: center;
+      font-size: 18px;
+      color: #007bff;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .resume {
+      width: 100%;
+      background: white;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-top: 20px;
+    }
+
+    .header {
+      background-color: #d6c8c0;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .header .name {
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .contact-info {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    .section {
+      margin-top: 20px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #5a4e4e;
+      border-left: 4px solid #d6c8c0;
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    .summary, .skills, .education {
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .skills ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .skills ul li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 14px;
+    }
+
+    .skills ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #d6c8c0;
+    }
+
+    .experience .job {
+      margin-bottom: 20px;
+    }
+
+    .job-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .company-location {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .job-details {
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .action-btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .action-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    <!-- Score Display -->
+    <div id="score" class="score-display">ATS FRIENDLY SCORE: 0/100</div>
+
+    <!-- Resume Content -->
+    <div class="resume">
+      <!-- Header Section -->
+      <div class="header">
+        <div class="name" contenteditable="true">YOUR NAME</div>
+        <div class="contact-info" contenteditable="true">
+          d.agarwal@sample.in | +91 11 5555 3345<br>
+          New Delhi, India 110034
+        </div>
+      </div>
+
+      <!-- Summary Section -->
+      <div class="section summary">
+        <div class="section-title">Summary</div>
+        <p contenteditable="true">
+          Customer-focused Retail Sales professional with solid understanding of retail dynamics, marketing, and customer service. Offering 5 years of experience providing quality product recommendations and solutions to meet customer needs and exceed expectations. Demonstrated record of exceeding revenue targets by leveraging communication skills and sales expertise.
+        </p>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="section skills">
+        <div class="section-title">Skills</div>
+        <ul contenteditable="true">
+          <li>Cash register operation</li>
+          <li>POS system operation</li>
+          <li>Sales expertise</li>
+          <li>Teamwork</li>
+          <li>Inventory management</li>
+          <li>Accurate money handling</li>
+          <li>Documentation and recordkeeping</li>
+          <li>Retail merchandising expertise</li>
+        </ul>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="section experience">
+        <div class="section-title">Experience</div>
+
+        <div class="job" contenteditable="true">
+          <div class="job-title">Retail Sales Associate | 02/2017 to Current</div></br>
+          <div class="company-location">ZARA - New Delhi, India</div>
+          <ul class="job-details">
+            <li>Increased monthly sales 10% by effectively upselling and cross-selling products to maximize profitability.</li></br>
+            <li>Prevented store losses by leveraging awareness, attention to detail, and integrity to identify and investigate concerns.</li></br>
+            <li>Processed payments and maintained accurate drawers to meet financial targets.</li>
+          </ul>
+        </div>
+
+        <div class="job" contenteditable="true">
+          <div class="job-title">Barista | 03/2015 to 01/2017</div></br>
+          <div class="company-location">Dunkin' Donuts - New Delhi, India</div>
+          <ul class="job-details">
+            <li>Upsold seasonal drinks and pastries, boosting average store sales by ₹1500 weekly.</li></br>
+            <li>Managed morning rush of over 300 customers daily with efficient, levelheaded customer service.</li></br>
+            <li>Trained entire staff of 15 baristas in new smoothie program offerings and procedures.</li></br>
+            <li>Developed creative and appealing latte art techniques and instructed coworkers in method.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education Section -->
+      <div class="section education">
+        <div class="section-title">Education and Training</div>
+        <p contenteditable="true">
+          Oxford Software Institute & Oxford School of English - New Delhi, India<br>
+          Diploma in Financial Accounting<br>
+          2016
+        </p>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="buttons-container">
+      <button class="action-btn" onclick="calculateATSScore()">Calculate ATS Score</button>
+      <button class="action-btn" onclick="saveResumeAsPDF()">Save as PDF</button>
+    </div>
+  </div>
+
+  <!-- Chatbot Integration -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2024/11/19/09/20241119091811-LTYSS5JC.js"></script>  
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    function calculateATSScore() {
+      let score = 0;
+
+      function getContent(selector) {
+        const element = document.querySelector(selector);
+        return element ? element.innerText.trim() : "";
+      }
+
+      // Check for contact information
+      const contactInfo = getContent(".contact-info");
+      if (contactInfo && contactInfo.includes("@")) score += 20;
+
+      // Validate section titles
+      const sections = document.querySelectorAll(".section-title");
+      const expectedSections = ["Summary", "Skills", "Experience", "Education and Training"];
+      let validSections = 0;
+      sections.forEach(section => {
+        if (expectedSections.includes(section.innerText.trim())) {
+          validSections++;
+        }
+      });
+      if (validSections === expectedSections.length) score += 20;
+
+      // Check for keywords in skills
+      const skillsText = getContent(".skills");
+      const keywords = ["cash", "sales", "teamwork", "inventory"]; // Example keywords
+      let keywordMatchCount = 0;
+      keywords.forEach(keyword => {
+        if (skillsText.toLowerCase().includes(keyword.toLowerCase())) {
+          keywordMatchCount++;
+        }
+      });
+      if (keywordMatchCount > 0) score += 20;
+
+      // Validate experience details
+      const experienceDetails = document.querySelectorAll(".job-details li");
+      if (experienceDetails.length > 3) score += 40;
+
+      // Update score display
+      document.getElementById("score").innerText = `ATS FRIENDLY SCORE: ${score}/100`;
+    }
+
+    function saveResumeAsPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      html2canvas(document.querySelector(".resume")).then(canvas => {
+        const imgData = canvas.toDataURL("image/png");
+        const imgProps = doc.getImageProperties(imgData);
+        const pdfWidth = doc.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+        doc.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+        doc.save("resume.pdf");
+      });
+    }
+  </script>
+</body>
+</html>

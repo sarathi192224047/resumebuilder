@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Resume Container */
+    .resume {
+      width: 800px;
+      background: #fff;
+      padding: 30px;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 75px auto;
+    }
+
+    /* Header Section */
+    .header {
+      margin-bottom: 20px;
+    }
+
+    .name {
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .contact-info {
+      font-size: 14px;
+      color: #555;
+      margin-top: 5px;
+    }
+
+    /* Section Styles */
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+    }
+
+    .item {
+      margin-bottom: 10px;
+    }
+
+    .item-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    .item-details {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .item-description {
+      font-size: 14px;
+      color: #333;
+      margin-top: 5px;
+    }
+
+    /* Score Display */
+    .score-display {
+      text-align: center;
+      font-size: 18px;
+      color: #007bff;
+      font-weight: bold;
+      position: fixed;
+      top: 20px;
+      width: 100%;
+    }
+
+    /* Button Container */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .save-btn {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 0 10px;
+      width: 200px;
+    }
+
+    .save-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Score Display -->
+  <div class="score-display" id="score">RESUME SCORE: 0/100</div>
+
+  <!-- Resume Content -->
+  <div class="resume">
+    <div class="header">
+      <div class="name">Unclaimed Tiger</div>
+      <div class="contact-info">Phone Number | Email@example.com | City, State</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Experience</div>
+      <div class="item">
+        <div class="item-title">Company A | Location</div>
+        <div class="item-details">Sales Representative | Start and End Date</div>
+        <div class="item-description">Enter key responsibilities and accomplishments.</div>
+      </div>
+      <div class="item">
+        <div class="item-title">Company B | Location</div>
+        <div class="item-details">Sales Associate | Start and End Date</div>
+        <div class="item-description">
+          Show that you create value with your work by listing responsibilities and achievements.
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-title">Company C | Location</div>
+        <div class="item-details">Sales Assistant | Start and End Date</div>
+        <div class="item-description">
+          Use AI to assist in creating a work description using your experience.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Skills</div>
+      <div class="item-description">List 3-4 special, work-related skills.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="item">
+        <div class="item-title">Graduated School | Location</div>
+        <div class="item-details">Field of Study | Graduation Date</div>
+        <div class="item-description">Enter any colleges, universities, or training programs attended.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Button Container -->
+  <div class="button-container">
+    <button class="save-btn" onclick="calculateResumeScore()">Calculate Resume Score</button>
+    <button class="save-btn" onclick="saveResumeAsPDF()">Save as PDF</button>
+  </div>
+
+  <!-- Chatbot Integration -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2024/11/19/09/20241119091811-LTYSS5JC.js"></script>  
+
+  <!-- Resume Scoring and PDF Saving -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    function calculateResumeScore() {
+      let score = 0;
+
+      // Name Validation
+      const name = document.querySelector('.name').innerText.trim();
+      if (name && name !== "Unclaimed Tiger") score += 20;
+
+      // Contact Info Validation
+      const contact = document.querySelector('.contact-info').innerText.trim();
+      if (contact.includes('@')) score += 20;
+
+      // Experience Validation
+      const experience = document.querySelectorAll('.section:nth-of-type(1) .item-title');
+      if (experience.length > 0) score += 30;
+
+      // Skills Validation
+      const skills = document.querySelector('.section:nth-of-type(2) .item-description').innerText.trim();
+      if (skills.split(',').length >= 3) score += 15;
+
+      // Education Validation
+      const education = document.querySelector('.section:nth-of-type(3) .item-title').innerText.trim();
+      if (education) score += 15;
+
+      document.getElementById('score').innerText = `RESUME SCORE: ${Math.min(score, 100)}/100`;
+    }
+
+    async function saveResumeAsPDF() {
+      const resume = document.querySelector('.resume');
+      const canvas = await html2canvas(resume);
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF();
+      pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 10, 10, 190, 0);
+      pdf.save('resume.pdf');
+    }
+  </script>
+</body>
+</html>
